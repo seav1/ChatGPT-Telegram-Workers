@@ -1,15 +1,19 @@
-name: Sync
 on:
   schedule:
-    - cron: '0 0 * * *'
+  - cron:  "*/60 * * * *"
+  workflow_dispatch:
+
 jobs:
-    sync:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Sync
-            uses: repo-sync/github-sync@v2
-            with:
-            source_repo: 'https://github.com/TBXark/ChatGPT-Telegram-Workers'
-            target_repo: 'https://github.com/seav1/ChatGPT-Telegram-Workers‘
-            github_token: ${{ secrets.GITHUB_TOKEN }} 
-            source_branch: 'master'
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - name: repo-sync
+      uses: repo-sync/github-sync@v2
+      with:
+        source_repo: "https://github.com/TBXark/ChatGPT-Telegram-Workers"
+        source_branch: "https://github.com/seav1/ChatGPT-Telegram-Workers"
+        destination_branch: "master"
+        github_token: ${{ secrets.PAT }}
