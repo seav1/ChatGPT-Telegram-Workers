@@ -1,3 +1,4 @@
+# File: .github/workflows/repo-sync.yml
 on:
   schedule:
   - cron:  "*/60 * * * *"
