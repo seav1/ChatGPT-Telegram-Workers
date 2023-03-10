@@ -16,7 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
-    - uses: repo-sync/github-sync@v2
+      - uses: actions/checkout@v3
+      - uses: repo-sync/github-sync@v2
+        name: Sync repo to branch
         with:
           persist-credentials: false
 
