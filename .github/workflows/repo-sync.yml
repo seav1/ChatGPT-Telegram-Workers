@@ -25,7 +25,6 @@ jobs:
         if: env.PAT
         with:
           source_repo: "https://github.com/TBXark/ChatGPT-Telegram-Workers.git"
-          target_repo: "https://github.com/seav1/ChatGPT-Telegram-Workers.git"
           source_branch: "master"
           destination_branch: "master"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
