@@ -22,7 +22,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: 开始A自动同步
+      - name: autosync
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
