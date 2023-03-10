@@ -18,9 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: repo-sync/github-sync@v2
-        name: Sync repo to branch
+
         with:
-          persist-credentials: false
+
 
       - name: autosync
         uses: repo-sync/github-sync@v2
