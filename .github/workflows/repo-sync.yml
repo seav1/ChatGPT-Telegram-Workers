@@ -13,7 +13,7 @@ jobs:
       with:
         persist-credentials: false
     - name: GitHub Repo Sync
-      uses: repo-sync/github-sync@v2.3.0
+      uses: repo-sync/github-sync@v2
       with:
         source_repo: "https://github.com/TBXark/ChatGPT-Telegram-Workers"
         source_branch: "master"
