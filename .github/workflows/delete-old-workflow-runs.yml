@@ -1,6 +1,11 @@
 name: delete old workflow runs
 
 on: [push]
+  schedule:
+    # UTC (国内 UTC+8)
+    - cron: '15 16 * * *'
+  workflow_dispatch:
+
 
 jobs:
   build:
